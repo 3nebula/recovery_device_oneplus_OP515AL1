@@ -19,6 +19,16 @@ on early-init
     insmod /vendor/lib/modules/snd_event_dlkm.ko
     insmod /vendor/lib/modules/adsp_loader_dlkm.ko
     insmod /vendor/lib/modules/oplus_chg.ko
+    insmod /vendor/lib/modules/usbtouchscreen.ko
+    insmod /vendor/lib/modules/msm_drm.ko
+    insmod /vendor/lib/modules/msm_kgsi.ko
+    insmod /vendor/lib/modules/oplus_bsp_tp_common.ko
+    insmod /vendor/lib/modules/oplus_bsp_tp_ft3518.ko
+    insmod /vendor/lib/modules/oplus_bsp_tp_gt9886.ko
+    insmod /vendor/lib/modules/oplus_bsp_tp_device.ko
+    insmod /vendor/lib/modules/synaptics_tcm_device.ko
+    insmod /vendor/lib/modules/synaptics_tcm_i2c.ko
+    insmod /vendor/lib/modules/synaptics_tcm_touch.ko
     start load_ts_firmware
 
 on property:twrp.modules.loaded=true
@@ -38,4 +48,3 @@ service load_ts_firmware /system/bin/load_ts_firmware.sh
     disabled
     oneshot
     seclabel u:r:recovery:s0
-
